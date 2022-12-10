@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    border-radius: 10px;
+    height: 300px;
+}
+
+img {
+    width: 150px;
+    }
+
+.card button {
+    color: orange;
+}

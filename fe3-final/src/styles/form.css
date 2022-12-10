@@ -1,0 +1,41 @@
+.form-container {
+ height: 300px;
+}
+
+label {
+    font-weight: bold;
+    padding: 20px;
+
+}
+
+input {
+    border-radius: 5px;
+    border: 0.1px solid;
+    margin-bottom: 20px;
+    padding: 7px;
+}
+
+input:hover{
+    border: 0.5px solid rgb(206, 217, 142);
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+
+.send-button {
+ border: none;
+ background-color: rgba(136, 136, 136, 0.116);
+}
+
+.send-button:hover {
+    background-color: rgba(136, 136, 136, 0.4);
+}
+
+.error {
+    color: red;
+}

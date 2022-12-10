@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import Card from "../Components/Card";
 import ThemeContext from "../Components/utils/Theme";
+import "../styles/favs.css";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
@@ -13,7 +14,6 @@ const Favs = () => {
     const list = favItems ? JSON.parse(favItems) : [];
     setFavs(list);
   }, []);
-
 
   function renderFavs() {
     if (!favs) {
@@ -31,9 +31,12 @@ const Favs = () => {
 
   return (
     <>
-      <h1>Dentists Favs</h1>
-      <div className={`card-grid ${theme === "dark" ? "dark" : "light"}`}>
+      <div className={theme === "dark" ? "dark" : "light"}>
+        <h1>Dentists Favs</h1>
+        <div className="grid-cards">
         {renderFavs()}
+        </div>
+
       </div>
     </>
   );

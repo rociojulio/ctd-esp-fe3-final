@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { useParams } from 'react-router-dom';
+import "../styles/detail.css";
 
 
 import ThemeContext from '../Components/utils/Theme';
@@ -31,8 +32,8 @@ const Detail = () => {
       return <div>Loading</div>;
     } else{
       return(
-      <table class="table">
-        <thead class="table-light">
+      <table className="table">
+        <thead>
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
@@ -54,8 +55,9 @@ const Detail = () => {
 
   return (
     <>
+      
+      <div className={theme === "dark" ? 'dark' : 'light'}>
       <h1>Detail Dentist id </h1>
-      <div className={`card-grid ${theme === "dark" ? 'dark' : 'light'}`}>
         {error ? <div>There was an error</div> : renderDentist()}
       </div>
     </>

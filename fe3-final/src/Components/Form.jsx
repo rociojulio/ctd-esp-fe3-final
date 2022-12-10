@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import "../styles/form.css";
 
-// import "./form.css";
 
 const Form = ({ setMessage, setErrorMessage }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
-  function handelSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     const isNameNotValid = validateName(name);
     const isEmailNotValid = validateEmail(email);
@@ -22,7 +22,7 @@ const Form = ({ setMessage, setErrorMessage }) => {
     }
   }
 
-  function handelName(e) {
+  function handleName(e) {
     const nameValue = e.target.value;
     setName(nameValue);
   }
@@ -30,12 +30,12 @@ const Form = ({ setMessage, setErrorMessage }) => {
   function validateName(name) {
     if (name.trim() === "") {
       return "The name should not be empty";
-    } else if (name.length <= 5) {
+    } else if (!/^\w{5}$/.test(name.trim())) {
       return "The name should have at least 5 characters";
     }
   }
 
-  function handelEmail(e) {
+  function handleEmail(e) {
     const emailValue = e.target.value;
     setEmail(emailValue);
   }
@@ -51,33 +51,33 @@ const Form = ({ setMessage, setErrorMessage }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={(e) => handelSubmit(e)}>
-        <div>
+    <div className="form-container">
+      <form onSubmit={(e) => handleSubmit(e)}>
+        
           <label htmlFor="formControlName">
             Full Name
           </label>
           <input
-            onChange={handelName}
+            onChange={handleName}
             type="text"
             value={name}
             id="formControlName"
             placeholder="Full name"
           />
-        </div>
-        <div>
+
+        
           <label htmlFor="formControlEmail">
             Email
           </label>
           <input
-            onChange={handelEmail}
+            onChange={handleEmail}
             type="email"
             value={email}
             id="formControlEmail"
             placeholder="Email"
           />
-        </div>
-        <input value={"Send"} type="submit"></input>
+  
+        <input className="send-button" value={"Send"} type="submit"></input>
         {error && <span className="error">*{error}</span>}
       </form>
     </div>
