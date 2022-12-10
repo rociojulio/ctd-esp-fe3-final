@@ -5,7 +5,7 @@ const DataContext = createContext();
 const initialData = [];
 
 
-const Data = ({children}) => {
+const DataProvider = ({children}) => {
     const [dentists, setDentists] =useState(initialData);
     const data = {dentists, setDentists};
 
@@ -13,4 +13,4 @@ const Data = ({children}) => {
 }
 
 export default DataContext;
-export {Data};
+export {DataProvider};

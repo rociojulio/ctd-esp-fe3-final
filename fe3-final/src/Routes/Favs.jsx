@@ -14,15 +14,6 @@ const Favs = () => {
     setFavs(list);
   }, []);
 
-  // const removeFav = () => {
-
-  //   const favList = localStorage.getItem("favs");
-  //   const list = favList ? JSON.parse(favList) : [];
-
-  //   const newList = list.filter(fav => fav.id !== id);
-
-  //   localStorage.setItem("favs", JSON.stringify(newList));
-  // };
 
   function renderFavs() {
     if (!favs) {
